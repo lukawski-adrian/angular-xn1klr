@@ -8,6 +8,8 @@ import { ProductAlertsComponent } from './product-alerts/product-alerts.componen
 import { TempTableComponent } from './temp-table/temp-table.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialExampleModule } from '../material.module';
+import { NgxEchartsModule } from 'ngx-echarts';
+import { LineChartComponent } from './line-chart/line-chart.component';
 
 @NgModule({
   imports: [
@@ -16,12 +18,16 @@ import { MaterialExampleModule } from '../material.module';
     RouterModule.forRoot([{ path: '', component: TempTableComponent }]),
     MaterialExampleModule,
     BrowserAnimationsModule,
+    NgxEchartsModule.forRoot({
+      echarts: () => import('echarts'),
+    }),
   ],
   declarations: [
     AppComponent,
     TopBarComponent,
     ProductAlertsComponent,
     TempTableComponent,
+    LineChartComponent,
   ],
   bootstrap: [AppComponent],
 })
